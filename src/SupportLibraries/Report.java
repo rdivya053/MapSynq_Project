@@ -175,67 +175,7 @@ public class Report extends TestSteps{
 	  
 }
 
-	  public static void failm(String description, String objects,String TC) 
-	    {
-		  try{
-	        if(!Browser1.equals("HTML Unit Driver"))
-	        {
-	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-	     	 Date date = new Date();
-	    	
-	    	 DateFormat dateFormat1 = new SimpleDateFormat("HHmmss");
-	     	 Date date1 = new Date();
-	     	//new File("FailReport\\").mkdir();
-	    	File scrFile = ((TakesScreenshot)mobiledriver).getScreenshotAs(OutputType.FILE);
-	    	FileUtils.copyFile(scrFile, new File("Reports//"+date23+"//"+dateFormat1.format(date1)+"screenshot.png"));
-	    	
-		      j=j+1;
-		      ii=ii+1;
-//		      System.out.println("sen"+j);
-		  	  bw.write("<tr>");
-		  	  bw.write("<td border="+2+" width="+50+"><font color="+black+"><b><center>"+ii+"</center></b></font></td>");
-		  	  bw.write("<td border="+2+" width="+50+">" +
-		  	  		"<a href="+dateFormat1.format(date1)+"screenshot.png"+"><font color="+red+"><b><center>Fail</center></font></a></td>");
-		  	  
-		  	
-		  	  bw.write("<td border="+2+" width="+300+">"+description+"</td>");
-		  	 // bw.write("<td border="+2+" width="+300+">"+objects+"</td>");
-		  	  bw.write("<td border="+2+" width="+300+">"+TC+"</td>");
-		  	 
-		  	  bw.write("<td width="+150+"><font color="+black+">"+dateFormat.format(date)+"</font></td>");
-		  	  bw.write("</tr>"); 
-		  	  System.out.println("FAIL: "+description+"     "+dateFormat.format(date));
-	        }else
-	        {
-		    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-		     	 Date date = new Date();
-		    	
-		    	 DateFormat dateFormat1 = new SimpleDateFormat("HHmmss");
-		     	 Date date1 = new Date();
-		     	//new File("FailReport\\").mkdir();
-		    	
-			      j=j+1;
-			      ii=ii+1;
-//			      System.out.println("sen"+j);
-			  	  bw.write("<tr>");
-			  	  bw.write("<td border="+2+" width="+50+"><font color="+black+"><b><center>"+ii+"</center></b></font></td>");
-			  	  bw.write("<td border="+2+" width="+50+"><font color="+red+"><b><center>Fail</center></font></a></td>");
-			  	  
-			  	
-			  	  bw.write("<td border="+2+" width="+300+">"+description+"</td>");
-			  	  bw.write("<td border="+2+" width="+300+">"+objects+"</td>");
-			  	  bw.write("<td border="+2+" width="+300+">"+TC+"</td>");
-			  	 
-			  	  bw.write("<td width="+150+"><font color="+black+">"+dateFormat.format(date)+"</font></td>");
-			  	  bw.write("</tr>"); 
-			  	  System.out.println("PASS: "+description+"     "+dateFormat.format(date));
-	        }
-		  }catch(Exception e)
-	    	{
-	    		System.out.println("Error: "+e);
-	    	}
-	  
-}
+	
 	  
 	  
 
